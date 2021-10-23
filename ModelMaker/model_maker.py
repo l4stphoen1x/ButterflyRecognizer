@@ -1,3 +1,20 @@
+#
+# Copyright 2021 Gerry(gpiosenka). All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#        http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# Modifications copyright (C) 2021 Andrii Hubert
+
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.layers import Dense, Dropout
@@ -272,7 +289,7 @@ class LRA(keras.callbacks.Callback):
                         text_design(message, (0, 255, 255), (55, 65, 80))
                         message = '{0:^10s}{1:^7s}{2:^7s}{3:^9s}{4:^1s}{5:^7s}{6:^7s}{7:^7s}{8:^7s}'.format('Epoka', 'Strata', 'Dokładność ', 'V_Strata', 'V_Dokładność', 'LR', 'Następny_LR ', 'Condition ',  'Trwanie')
                         text_design(message, (244, 252, 3), (55, 65, 80))
-epochs = 35
+epochs = 1
 batch_per_epoch = train_stages
 epoch_rethinking = None
 bestepoch_boolean = True
@@ -378,7 +395,6 @@ def print_info( test_gen, preds, print_code, save_dir, subject ):
             x=plot_bar[i]
             plt.barh(c, x)
             plt.title('Błędy według klas w zestawie testowym')
-        plt.show()
     y_true= np.array(labels)
     y_pred=np.array(y_pred)
     if len(classes)<= 30:
