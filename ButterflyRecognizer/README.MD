@@ -1,0 +1,1 @@
+Butterfly Recognizer to projekt aplikacji mobilnej dla systemu Android w języku programowania Java do klasyfikowania motyli.
